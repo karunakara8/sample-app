@@ -20,7 +20,7 @@ steps:
     - 'CLOUDSDK_COMPUTE_REGION=asia-south1'
     - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster-karunakara'
   - name: 'gcr.io/cloud-builders/kubectl'
-    id: 'Deploy'
+    id: 'Deploy_service'
     args: ['-n', 'dev', 'apply', '-f', 'dev/service_dev.yaml']
     env:
     - 'CLOUDSDK_COMPUTE_REGION=asia-south1'
