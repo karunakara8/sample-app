@@ -19,6 +19,7 @@ steps:
     env:
     - 'CLOUDSDK_COMPUTE_REGION=asia-south1'
     - 'CLOUDSDK_CONTAINER_CLUSTER=my-cluster-karunakara'
+  # Step 5: Apply the service YAML file to the production namespace
   - name: 'gcr.io/cloud-builders/kubectl'
     id: 'Deploy_service'
     args: ['-n', 'dev', 'apply', '-f', 'dev/service_dev.yaml']
