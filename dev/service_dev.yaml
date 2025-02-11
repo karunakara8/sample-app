@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: development-service
+  namespace: dev  # Ensure this matches your deployment's namespace
+spec:
+  selector:
+    app: dev-app  # Must match the labels in your Deployment
+  ports:
+    - protocol: TCP
+      port: 80          # External port (browser)
+      targetPort: 8080  # The port inside the container
+  type: LoadBalancer  # This makes it accessible from the internet
